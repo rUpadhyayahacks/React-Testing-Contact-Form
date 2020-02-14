@@ -1,3 +1,7 @@
+Wrote 2 tests.
+One two make sure the input fields were being rendered.
+And to make sure the submit was updating with contact info
+
 # Contact Form - Testing
 
 ## Advanced React Sprint

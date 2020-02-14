@@ -15,7 +15,7 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="firstName">First Name*</label>
-          <input
+          <input id='firstName'
             name="firstName"
             placeholder="bill"
             ref={register({ required: true, maxLength: 3 })}
@@ -28,6 +28,7 @@ const ContactForm = () => {
         <div>
           <label htmlFor="lastName">Last Name*</label>
           <input
+          id='lastName'
             name="lastName"
             placeholder="luo"
             ref={register({ required: true })}
@@ -41,9 +42,12 @@ const ContactForm = () => {
           <label htmlFor="email" placeholder="bluebill1049@hotmail.com">
             Email*
           </label>
-          <input name="email" ref={register({ required: true })} />
+          <input 
+          data-testid='test first name'
+          id='email'
+          name="email" ref={register({ required: true })} />
           {errors.email && (
-            <p>Looks like there was an error: {errors.email.type}</p>
+            <p>  Looks like there was an error: {errors.email.type}</p>
           )}
         </div>
         <div>
@@ -51,11 +55,13 @@ const ContactForm = () => {
           <textarea name="message" ref={register({ required: false })} />
         </div>
         {data && (
-          <pre style={{ textAlign: "left", color: "white" }}>
+          <pre  style={{ textAlign: "left", color: "white" }}>
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
-        <input type="submit" />
+        <input 
+        data-testid='submit'
+        type="submit" />
       </form>
     </div>
   );
